@@ -1,7 +1,10 @@
 # README
+Project: RalesEngine
+Version: 1.1
+Date: 10.01.18
+Author: Tim Fielder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example of an API for practice purposes.
 
 Things you may want to cover:
 
