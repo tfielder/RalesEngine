@@ -23,5 +23,5 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
+  Run `rake seed_data:import` to import the data to the database
 * ...
