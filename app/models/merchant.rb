@@ -16,10 +16,10 @@ class Merchant < ApplicationRecord
   #   Merchant.select(invoice_item unit_price * quantity)where('merchants.id = ?', id).joins(:invoices).joins(:transactions).where('transactions.result = ?', "success").round(2)
   # end
 
-  def revenue_for_date
-    Merchant.
-    #all the invoices with merchant_id for a date that 
-    #need relationship to transactions
-  end
+  # def revenue_for_date
+  #   Merchant.
+  #   #all the invoices with merchant_id for a date that
+  #   #need relationship to transactions
+  # end
 
 end
