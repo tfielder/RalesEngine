@@ -35,13 +35,13 @@ class MerchantsApiTest < ApiTest
     }
   end
 
-  # def test_it_can_find_first_instance_by_id
-  #   merchant = load_data("/api/v1/merchants/find?id=#{merchant_find['id']}")
-  #
-  #   merchant_find.each do |attribute|
-  #     assert_equal merchant_find[attribute], merchant[attribute]
-  #   end
-  # end
+  def test_it_can_find_first_instance_by_id
+    merchant = load_data("/api/v1/merchants/find?id=#{merchant_find['id']}")
+  
+    merchant_find.each do |attribute|
+      assert_equal merchant_find[attribute], merchant[attribute]
+    end
+  end
 
   # def test_it_can_find_first_instance_by_name
   #   merchant = load_data("/api/v1/merchants/find?name=#{merchant_find['name']}")
