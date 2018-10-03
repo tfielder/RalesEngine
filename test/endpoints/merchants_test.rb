@@ -90,7 +90,7 @@ class MerchantsApiTest < ApiTest
 
   def test_it_can_find_all_instances_by_id
     merchants = load_data("/api/v1/merchants/find_all?id=#{merchant_find_all['id']}")
-
+    binding.pry
     assert_equal 1, merchants.count
 
     merchant_find_all.each do |attribute|
