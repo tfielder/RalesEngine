@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show] do
         get '/items', to: 'merchants/merchant_items#index'
         get '/invoices', to: 'merchants/merchant_invoices#index'
+        get '/favorite_customer', to: 'merchants/favorite_customer#show'
+        get '/customers_with_pending_invoices', to: 'merchants/pending_invoices#index'
+        get '/revenue', to: 'merchants/revenue#show'
       end
       namespace :customers do
         get '/find', to: 'customer_search#show'

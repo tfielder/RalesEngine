@@ -4,9 +4,10 @@ class Merchant < ApplicationRecord
   has_many :invoices
   has_many :items
 
-  # def favorite_customer(id)
-  #   Customer.joins(:merchants).where('merchants.id = ?', id).group_by(customers.name).count
-  # end
+  def favorite_customer
+    binding.pry
+    Customer.joins(:merchants).where('merchants.id = ?', :id).group_by(customers.name).count
+  end
 
   # def customers_with_pending_invoices(id)
   #   Customer.joins(:merchants).joins(:invoices).where('merchants.id = ?', id).where('invoices.status = ?', "pending")
