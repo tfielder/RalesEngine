@@ -86,7 +86,7 @@ def build_invoice_items
                      item_id: invoice_item[:item_id],
                      invoice_id: invoice_item[:invoice_id],
                      quantity: invoice_item[:quantity],
-                     unit_price: invoice_item[:unit_price],
+                     unit_price: ('%0.2f' % (item[:unit_price].to_f / 100)).to_s,
                      created_at: invoice_item[:created_at],
                      updated_at: invoice_item[:updated_at]
                     }
@@ -132,7 +132,7 @@ def build_items
     item_hash = {id: item[:id],
                  name: item[:name],
                  description: item[:description],
-                 unit_price: item[:unit_price],
+                 unit_price: ('%0.2f' % (item[:unit_price].to_f / 100)).to_s,
                  merchant_id: item[:merchant_id],
                  created_at: item[:created_at],
                  updated_at: item[:updated_at]
