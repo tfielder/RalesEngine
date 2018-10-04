@@ -156,7 +156,7 @@ def build_transactions
     transaction_hash = {id: transaction[:id],
                      invoice_id: transaction[:invoice_id],
                      credit_card_number: transaction[:credit_card_number],
-                     credit_card_expiration_date: transaction[:credit_card_expiration_date],
+                     #credit_card_expiration_date: transaction[:credit_card_expiration_date],
                      result: transaction[:result],
                      created_at: transaction[:created_at],
                      updated_at: transaction[:updated_at]
