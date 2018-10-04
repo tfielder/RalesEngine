@@ -32,6 +32,7 @@ end
 # end
 
 def build_merchants
+  puts "creating merchants, please wait"
   merchants = []
   CSV.foreach('./data/merchants.csv', OPTIONS) do |merchant|
     merchants << merchant
@@ -52,6 +53,7 @@ def build_merchants
 end
 
 def build_customers
+  puts "creating customers, please wait"
   customers = []
   CSV.foreach('./data/customers.csv', OPTIONS) do |customer|
     customers << customer
@@ -73,6 +75,7 @@ def build_customers
 end
 
 def build_invoice_items
+  puts "creating invoice items, please wait"
   invoice_items = []
   CSV.foreach('./data/invoice_items.csv', OPTIONS) do |invoice_item|
     invoice_items << invoice_item
@@ -96,6 +99,7 @@ def build_invoice_items
 end
 
 def build_invoices
+  puts "creating invoices, please wait"
   invoices = []
   CSV.foreach('./data/invoices.csv', OPTIONS) do |invoice|
     invoices << invoice
@@ -118,6 +122,7 @@ def build_invoices
 end
 
 def build_items
+  puts "creating items, please wait"
   items = []
   CSV.foreach('./data/items.csv', OPTIONS) do |item|
     items << item
@@ -141,8 +146,9 @@ def build_items
 end
 
 def build_transactions
+  puts "creating transactions, please wait"
   transactions = []
-  CSV.foreach('./data/items.csv', OPTIONS) do |transaction|
+  CSV.foreach('./data/transactions.csv', OPTIONS) do |transaction|
     transactions << transaction
   end
   count = 0
