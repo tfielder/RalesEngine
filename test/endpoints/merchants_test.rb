@@ -48,7 +48,6 @@ class MerchantsApiTest < ApiTest
     merchant = load_data("/api/v1/merchants/find?name=#{merchant_find['name']}")
 
     merchant_find.each do |attribute|
-      binding.pry
       assert_equal merchant_find[attribute], merchant[attribute]
     end
   end
