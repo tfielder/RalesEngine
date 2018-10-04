@@ -28,25 +28,25 @@ class TransactionsApiTest < ApiTest
   # FINDERS
   # /find?query=parameters
 
-  # def transaction_find
-  #   {
-  #     "id"                 => 3602,
-  #     "invoice_id"         => 3116,
-  #     "credit_card_number" => "4367385045579566",
-  #     "result"             => "success",
-  #     "created_at"         => "2012-03-27T14:56:42.000Z",
-  #     "updated_at"         => "2012-03-27T14:56:42.000Z"
-  #   }
-  # end
-  #
-  # def test_it_can_find_first_instance_by_id
-  #   transaction = load_data("/api/v1/transactions/find?id=#{transaction_find['id']}")
-  #
-  #   transaction_find.each do |attribute|
-  #     assert_equal transaction_find[attribute], transaction[attribute]
-  #   end
-  # end
-  #
+  def transaction_find
+    {
+      "id"                 => 3602,
+      "invoice_id"         => 3116,
+      "credit_card_number" => "4367385045579566",
+      "result"             => "success",
+      "created_at"         => "2012-03-27T14:56:42.000Z",
+      "updated_at"         => "2012-03-27T14:56:42.000Z"
+    }
+  end
+
+  def test_it_can_find_first_instance_by_id
+    transaction = load_data("/api/v1/transactions/find?id=#{transaction_find['id']}")
+
+    transaction_find.each do |attribute|
+      assert_equal transaction_find[attribute], transaction[attribute]
+    end
+  end
+  
   # def test_it_can_find_first_instance_by_invoice_id
   #   transaction = load_data("/api/v1/transactions/find?invoice_id=#{transaction_find['invoice_id']}")
   #
