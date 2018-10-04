@@ -1,6 +1,5 @@
-class Api::V1::InvoiceItemItems::InvoiceItemsController < ApplicationController
+class Api::V1::InvoiceItems::InvoiceItemItemController < ApplicationController
   def show
-    binding.pry
-    render json: InvoiceItem.find(params[:id]).item
+    render json: InvoiceItem.find(params[:invoice_item_id]).item
   end
 end
