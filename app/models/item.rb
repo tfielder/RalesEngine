@@ -6,4 +6,12 @@ class Item < ApplicationRecord
 
   belongs_to :merchant
   has_many :invoice_items
+
+
+  def best_day
+    #item that had most successful transactions by date
+    #connect item to invoice items to invoices that
+  end
+
+
 end
