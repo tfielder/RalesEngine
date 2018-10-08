@@ -4,19 +4,25 @@ class Merchant < ApplicationRecord
   has_many :invoices
   has_many :items
   has_many :customers, through: :invoices
+  has_many :transactions, through: :invoices
+  has_many :invoice_items, through: :invoices
 
-  # def favorite_customer
-  #   binding.pry
-  #   Customer.joins(:merchants).where('merchants.id = ?', :id).group_by(customers.name).count
-  # end
+  def self.favorite_merchant_by_customer(id)
+    joins(:invoices, :transactions)
+      .where("invoices.customer_id = ?", id)
+      .where("transactions.result = ?", "success")
+      .select("merchants.*", "count(merchants.id) AS count")
+      .group("merchants.id")
+      .order(count: :desc)
+      .limit(1)
+      .first
+  end
 
-  # def customers_with_pending_invoices(id)
-  #   Customer.joins(:merchants).joins(:invoices).where('merchants.id = ?', id).where('invoices.status = ?', "pending")
-  # end
-
-  # def revenue(id)
-  #   Merchant.select(invoice_item unit_price * quantity)where('merchants.id = ?', id).joins(:invoices).joins(:transactions).where('transactions.result = ?', "success").round(2)
-  # end
+  def revenue(id)
+    invoices.joins(:invoice_items, :transactions)
+      .where('transactions.result = ?', "success")
+      #.sum("invoice_items.unit_price * invoice_items.quantity")
+  end
 
   # def revenue_for_date
   #   Merchant.

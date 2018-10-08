@@ -1,11 +1,6 @@
-class Api::V1::Customers::CustomerFavoriteMerchantController < ApplicationRecord
-  def
-    binding.pry
-    render json: Merchant.joins(:invoices)
-      .where("invoices.customer_id = ?", params[:customer_id])
-      .select("count(merchants.id) AS count", "merchants.id")
-      .group("merchants.id")
-      .order(count: :desc)
-      .limit(1)
+class Api::V1::Customers::CustomerFavoriteMerchantController < ApplicationController
+  def show
+    id = params[:customer_id]
+    render json: Merchant.favorite_merchant_by_customer(id)
   end
 end
